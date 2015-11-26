@@ -5,11 +5,13 @@ repositories {
     jcenter()
 }
 
-jar {
-    baseName = 'Monopoly'
-    version = '1.0'
+task fatJar(type: Jar) {
     manifest {
-        attributes 'Main-Class': 'com.thoughtworks.wjlin.monopoly.probe.ColorPrinter' }
+        attributes 'Main-Class': 'com.thoughtworks.wjlin.monopoly.probe.ColorPrinter'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
 
 dependencies {
