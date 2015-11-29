@@ -1,11 +1,11 @@
 package com.thoughtworks.wjlin.monopoly.core;
 
 import com.thoughtworks.wjlin.monopoly.executable.Executor;
-import com.thoughtworks.wjlin.monopoly.executable.StartExecutor;
+import com.thoughtworks.wjlin.monopoly.executable.FundsConfigExecutor;
 
 public class Rich {
     public static void main(String [] args) {
-        Executor executor = new StartExecutor();
+        Executor executor = new FundsConfigExecutor();
 
         while(null != executor) {
             executor.execute();
